@@ -18,3 +18,8 @@ print 'kernel matrix generated!'
 t = time.time()
 result = dpp(kernel_matrix, max_length)
 print 'algorithm running time: ' + '\t' + "{0:.4e}".format(time.time() - t)
+
+window_size = 10
+t = time.time()
+result_sw = dpp_sw(kernel_matrix, window_size, max_length)
+print 'sw algorithm running time: ' + '\t' + "{0:.4e}".format(time.time() - t)
