@@ -24,6 +24,7 @@ def dpp(kernel_matrix, max_length, epsilon=1E-10):
         eis = (elements - np.dot(ci_optimal, cis[:k, :])) / di_optimal
         cis[k, :] = eis
         di2s -= np.square(eis)
+        di2s[selected_item] = -np.inf
         selected_item = np.argmax(di2s)
         if di2s[selected_item] < epsilon:
             break
